@@ -1,0 +1,21 @@
+.TimeInputFromTo .DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
+    background-color: #f0f8ff !important;
+    color: #4a90e2;
+  }
+.TimeInputFromTo .DayPicker-Day {
+    border-radius: 0 !important;
+  }
+.TimeInputFromTo .DayPicker-Day--start {
+    border-top-left-radius: 50% !important;
+    border-bottom-left-radius: 50% !important;
+  }
+.TimeInputFromTo .DayPicker-Day--end {
+    border-top-right-radius: 50% !important;
+    border-bottom-right-radius: 50% !important;
+  }
+.TimeInputFromTo .DayPickerInput-Overlay {
+    width: 550px;
+  }
+.TimeInputFromTo-to .DayPickerInput-Overlay {
+    margin-left: -198px;
+  }
