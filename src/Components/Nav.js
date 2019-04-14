@@ -69,7 +69,13 @@ class CNavbar extends Component {
                                 <NavLink href="/SignIn"><button style={btnstyle} className="f5 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib mid-gray bg-transparent bn" >Sign In</button></NavLink>
                             </NavItem>
                             <NavItem>
+                                <NavLink href="/Chat"><button style={btnstyle} className="f5 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib mid-gray bg-transparent bn" >Chat</button></NavLink>
+                            </NavItem>
+                            <NavItem>
                                 <NavLink href="/SignUp"><button style={btnstyle} className="f6 dib bg-animate hover-bg-black hover-white pv2 ph4 br-pill ba b--black-20">Sign Up</button></NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="/UserIndex"><button style={btnstyle} className="f6 dib bg-animate hover-bg-black hover-white pv2 ph4 br-pill ba b--black-20">User</button></NavLink>
                             </NavItem>
                         </Nav>
                     </Collapse>

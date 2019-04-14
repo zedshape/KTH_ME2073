@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import 'react-chat-elements/dist/main.css';
 import './Styles/index.css';
 
 import App from './App';

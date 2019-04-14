@@ -8,6 +8,9 @@ import SignIn from './Components/Auth/SignIn';
 import SignUp from './Components/Auth/SignUp';
 import Buyer from './Components/Buyer';
 import Traveller from './Components/Traveller';
+import Chat from './Components/ChatBox/ChatBox';
+import OrderPayment from './Components/OrderPayment';
+import UserIndex from './Components/UserIndex';
 
 import './Styles/App.css';
 
@@ -32,6 +35,9 @@ class App extends Component {
         <Route path="/SignUp" component={SignUp} />
         <Route path="/Buyer" component={Buyer} />
         <Route path="/Traveller" component={Traveller} />
+        <Route path="/Chat" component={Chat} />
+        <Route path="/OrderPayment" component={OrderPayment} />
+        <Route path="/UserIndex" component={UserIndex} />
       </div>
 
     )

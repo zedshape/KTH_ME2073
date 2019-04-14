@@ -1,9 +1,12 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with 
+[Create React App](https://github.com/facebook/create-react-app), 
+[Redux](https://redux.js.org/)
 
 ## Available Scripts
 
 In the project directory, you can run:
 
+### `npm install`
 ### `npm start`
 
 Runs the app in the development mode.<br>
@@ -16,3 +19,4 @@ You will also see any lint errors in the console.
 
 https://reactstrap.github.io/
 http://tachyons.io/
+
