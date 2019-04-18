@@ -11,6 +11,7 @@ import Traveller from './Components/Traveller';
 import Chat from './Components/ChatBox/ChatBox';
 import OrderPayment from './Components/OrderPayment';
 import UserIndex from './Components/UserIndex';
+import OrderDetails from './Components/OrderDetails'
 
 import './Styles/App.css';
 
@@ -38,6 +39,7 @@ class App extends Component {
         <Route path="/Chat" component={Chat} />
         <Route path="/OrderPayment" component={OrderPayment} />
         <Route path="/UserIndex" component={UserIndex} />
+        <Route path="/OrderDetails" component={OrderDetails} />
       </div>
 
     )
