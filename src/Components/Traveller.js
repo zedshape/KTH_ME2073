@@ -28,7 +28,8 @@ class Traveller extends Component {
             fromLoc: '',
             toLoc: '',
             availableSpace: '',
-            estimatedPrice: ''
+            estimatedPrice: '',
+            flightNumber:''
         };
     }
 
@@ -120,6 +121,10 @@ class Traveller extends Component {
                             <em>Destination </em>
                             <input placeholder="From" id="fromLoc" onChange={this.handleInputChange}></input>{' '}—{' '}
                             <input placeholder="To" id='toLoc' onChange={this.handleInputChange}></input>
+                        </div>
+                        <div className='mt3'>
+                            <em>Flight Number </em>
+                            <input id="flightNumber" onChange={this.handleInputChange}></input>
                         </div>
                         <div className='mt3'>
                             <em>Available Space </em>
