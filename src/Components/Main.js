@@ -28,21 +28,28 @@ class Main extends Component {
     render() {
 
         return (
-            <div className='avenir'>
-                <div className='mt6 ph4'>
-                    <h3>Do you want somebody bring sth for you?</h3>
-                    <h4>Press the button below</h4>
-                    <Link to='/Buyer'>
-                        <button className='mt2 f6 link dim br3 ba bw1 ph3 pv2 mb2 dib b--black'>Buyer's Page</button>
-                    </Link>
+            <div>
+                <div className='showing'>
+                  Fly high, Get money, Make somebody happy!
                 </div>
-                <h2 className='mt3'>Or</h2>
-                <div className='mt4 ph4'>
-                    <h3>Are you willing to bring sth while travelling?</h3>
-                    <h4>Press the button below</h4>
-                    <Link to='/Traveller'>
-                        <button className='mt2 f6 link dim br3 ba bw1 ph3 pv2 mb2 dib b--black'>Traveller's Page</button>
-                    </Link>
+                <div className='mainGrid'>
+                  <div className='white-box mt5 ph4'>
+                      <img src="https://image.flaticon.com/icons/svg/154/154087.svg" style={{width: '100px'}}/>
+                      <h3 className='mt5'>Do you want somebody bring something for you?</h3>
+
+                      <Link to='/Buyer'>
+                          <button className='mt3 btn btn-primary btn-lg'>Yes, I want to get something from somewhere else!</button>
+                      </Link>
+                  </div>
+                  <div className='or'></div>
+                  <div className='white-box mt5 ph4'>
+                      <img src="https://image.flaticon.com/icons/svg/59/59919.svg" style={{width: '100px'}}/>
+
+                      <h3 className='mt5'>Are you willing to bring something while travelling?</h3>
+                      <Link to='/Traveller'>
+                          <button className='mt3 btn btn-primary btn-lg'>Yes, I want to get money using my empty baggage!</button>
+                      </Link>
+                  </div>
                 </div>
             </div>
         );

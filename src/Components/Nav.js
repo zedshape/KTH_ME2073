@@ -52,10 +52,10 @@ class CNavbar extends Component {
             outline: 0
         }
         return (
-            <div className='avenir'>
-                <Navbar color="light" light expand="md">
-                    <NavbarBrand href="/">FLY2U</NavbarBrand>
-                    <input placeholder=' Search Here...' id='searchInput' onKeyDown={this.keyPress} onChange={this.handleChange}></input>
+            <div>
+                <Navbar color="white" light expand="md">
+                    <NavbarBrand className="nbb" href="/">FLY2U</NavbarBrand>
+                    <input placeholder=' Search Here...' id='searchInput' className="form-control navSearch" onKeyDown={this.keyPress} onChange={this.handleChange}></input>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
@@ -72,7 +72,7 @@ class CNavbar extends Component {
                                 <NavLink href="/Chat"><button style={btnstyle} className="f5 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib mid-gray bg-transparent bn" >Chat</button></NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/SignUp"><button style={btnstyle} className="f6 dib bg-animate hover-bg-black hover-white pv2 ph4 br-pill ba b--black-20">Sign Up</button></NavLink>
+                                <NavLink href="/SignUp"><button style={btnstyle} className="f6 dib bg-animate hover-bg-black hover-white pv2 ph4 br-pill ba b--black-20">Get Started!</button></NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink href="/UserIndex"><button style={btnstyle} className="f6 dib bg-animate hover-bg-black hover-white pv2 ph4 br-pill ba b--black-20">User</button></NavLink>
