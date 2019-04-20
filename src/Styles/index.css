@@ -9,9 +9,12 @@ body {
   background: #f4f5f4;
 }
 
+.pointer:hover{
+  cursor: pointer;
+}
 .showing {
   display: flex;
-  height: 300px;
+  height: 250px;
   font-size: 50px;
   align-items: center;
   background-position: center center !important;
@@ -19,6 +22,31 @@ body {
   justify-content: center;
   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/11/02/08/cabinbaggage.jpg')
 }
+.fly2u{
+    font-family: 'Righteous', cursive;
+}
+.gridUserIndex{
+  display: grid;
+  width: 800px;
+  height: 200px;
+  grid-gap: 5px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.gridUserIndex>div{
+  background-color: white;
+}
+.showing_sml {
+  display: flex;
+  height: 250px;
+  font-size: 50px;
+  align-items: center;
+  background-position: center center !important;
+  color: white;
+  justify-content: center;
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/11/02/08/cabinbaggage.jpg')
+}
+
 
 .mainGrid {
   display: grid;
