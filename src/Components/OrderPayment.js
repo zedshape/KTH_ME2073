@@ -39,6 +39,7 @@ class OrderPayment extends Component {
                 <h1 class="f4">Destination:</h1>
                 <h1 class="f4">Flight Time:</h1>
                 <Link to=''><button className='f6 link dim br1 ba ph3 pv2 mb2 dib black'>Confirm to Pay</button></Link>
+                <Link to='/Chat'><button className='f6 link dim br1 ba ph3 pv2 mb2 dib black'>Reject</button></Link>
             </div>
         );
     }

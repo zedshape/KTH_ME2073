@@ -12,6 +12,7 @@ import Chat from './Components/ChatBox/ChatBox';
 import OrderPayment from './Components/OrderPayment';
 import UserIndex from './Components/UserIndex';
 import OrderDetails from './Components/OrderDetails'
+import chatTest from './Components/ChatBox/chatTest'
 
 import './Styles/App.css';
 
@@ -40,6 +41,7 @@ class App extends Component {
         <Route path="/OrderPayment" component={OrderPayment} />
         <Route path="/UserIndex" component={UserIndex} />
         <Route path="/OrderDetails" component={OrderDetails} />
+        <Route path="/chatTest" component={chatTest} />
       </div>
 
     )

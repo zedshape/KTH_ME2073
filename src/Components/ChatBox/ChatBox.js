@@ -5,21 +5,27 @@ import { bindActionCreators } from "redux";
 //import { Link } from 'react-router-dom';
 
 import * as actions from "../../Actions/Index";
-import { Container, Row, Col } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 import {
-	MessageBox,
-	ChatItem,
 	ChatList,
-	SystemMessage,
 	MessageList,
 	Input,
 	Button,
-	Avatar,
-	Navbar,
-	SideBar,
-	Dropdown,
-	Popup,
+
 } from 'react-chat-elements';
+
+var dialogueLeft = {
+	position: 'left',
+	type: 'photo',
+	data: {
+		uri: require('../../Styles/qq.ico'),
+	},
+	status: 'read',
+	view: 'list',
+	theme: 'white',
+	text: 'Hello',
+	date: +new Date()
+};
 
 
 class ChatBox extends Component {
@@ -32,8 +38,10 @@ class ChatBox extends Component {
 		super(props);
 		this.state = {
 			isShow: false,
-			messageList: [],
-			input:''
+			messageList: [dialogueLeft],
+			input: '',
+			file: '',
+			imagePreviewUrl: ''
 		};
 	}
 
@@ -48,17 +56,57 @@ class ChatBox extends Component {
 	}
 
 	handleInputChange = (e) => {
-        this.setState({
-            input: e.target.value
-        })
+		this.setState({
+			input: e.target.value
+		})
+		console.log(this.state.input)
 	}
-	
-	addMessage() {
+
+	handleImageChange = (e) => {
+		e.preventDefault();
+		let reader = new FileReader();
+		let file = e.target.files[0];
+
+		reader.onloadend = () => {
+			this.setState({
+				file: file,
+				imagePreviewUrl: reader.result
+			});
+		}
+
+		reader.readAsDataURL(file)
+		console.log(this.state.file)
+	}
+
+	handleClearFileInfo=()=>{
+		this.setState({
+			file:'',
+			imagePreviewUrl:''
+		})
+	}
+
+	addMessage = (e) => {
+		e.preventDefault();
 		var list = this.state.messageList;
-		let input ={
-			position:  'right',
-			type : 'text',
-			status : 'read',
+		if (this.state.file) {
+			let imgInput = {
+				position: 'right',
+				type: 'photo',
+				data: {
+					uri: this.state.imagePreviewUrl,
+				},
+				status: 'read',
+				view: 'list',
+				theme: 'white',
+				date: +new Date()
+			}
+			list.push(imgInput)
+		}
+
+		let input = {
+			position: 'right',
+			type: 'text',
+			status: 'read',
 			view: 'list',
 			theme: 'white',
 			text: this.state.input,
@@ -66,13 +114,23 @@ class ChatBox extends Component {
 		}
 		list.push(input)
 		console.log(list)
-        this.setState({
-            messageList: list,
+		this.setState({
+			messageList: list,
 		});
-		
-    }
+
+	}
 
 	render() {
+
+		let { imagePreviewUrl } = this.state;
+		let $imagePreview = null;
+		if (imagePreviewUrl) {
+			$imagePreview = (<img src={imagePreviewUrl} />);
+		} else {
+			$imagePreview = (<div className="previewText">Please select an Image for Preview</div>);
+		}
+
+
 
 		return (
 			<div>
@@ -92,35 +150,41 @@ class ChatBox extends Component {
 						/>
 					</Col>
 					<Col className='bl b--black-10'>
-					<MessageList
-						className='message-list mt3'
-                        lockable={true}
-                        downButtonBadge={10}
-                        dataSource={this.state.messageList} />
-					<Input
-						className='mt3 flex items-end'
-                        placeholder="test"
-                        defaultValue=""
-                        ref='input'
-                        multiline={true}
-						// buttonsFloat='left'
-						onChange={this.handleInputChange}
-                        onKeyPress={(e) => {
-                            if (e.shiftKey && e.charCode === 13) {
-                                return true;
-                            }
-                            if (e.charCode === 13) {
-                                this.refs.input.clear();
-                                this.addMessage();
-                                e.preventDefault();
-                                return false;
-                            }
-                        }}
-                        rightButtons={
-                            <Button
-                                text='Send'
-                                onClick={this.addMessage.bind(this)} />
-                        } />
+						<MessageList
+							className='message-list mt3'
+							lockable={true}
+							downButtonBadge={10}
+							dataSource={this.state.messageList} />
+
+						<form onSubmit={(e)=>this.addMessage(e)}>
+							<Input
+								className='mt3'
+								placeholder="test"
+								defaultValue=""
+								ref='input'
+								multiline={true}
+								// buttonsFloat='left'
+								onChange={this.handleInputChange}
+								onKeyPress={(e) => {
+									if (e.shiftKey && e.charCode === 13) {
+										return true;
+									}
+									if (e.charCode === 13) {
+										this.refs.input.clear();
+										this.addMessage(e);
+										e.preventDefault();
+										return false;
+									}
+								}}
+								rightButtons={
+									<button
+										type="submit"
+										>send</button>
+								} />
+							<input type="file" name="fileToUpload" id="fileToUpload" onChange={(e) => this.handleImageChange(e)}></input>
+							<button onClick={this.handleClearFileInfo}>clear image</button>
+						</form>
+						
 					</Col >
 				</Row>
 			</div>
