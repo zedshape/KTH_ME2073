@@ -32,11 +32,13 @@ var dialogueLeft = {
 
 var messageLeft = {
 	position: 'left',
+	status: 'read',
 	text: 'I want some Rice from China'
 }
 
 var right1 = {
 	position: 'right',
+	status: 'sent',
 	text: 'Okay, I\'m coming to Sweden on 27th'
 }
 
