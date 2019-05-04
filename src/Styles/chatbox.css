@@ -1,0 +1,55 @@
+.chat-panel{
+    background-color: #ADD7E7;
+    padding-right: 0;
+}
+
+.messagePanel {
+    padding-left: 0;
+}
+
+.rce-citem{
+    background-color: mintcream;
+}
+
+.rce-citem-body--top-title {
+    color: black;
+    font-weight: bold;
+}
+
+.rce-citem-body {
+    text-align: left;
+}
+
+.rce-mlist {
+    text-align: left;
+}
+
+.rce-mbox.rce-mbox-right {
+    background-color: #EEDBDD !important;
+}
+
+.rce-mbox-right-notch {
+    fill: #EEDBDD !important;
+}
+
+.rce-mbox.rce-mbox {
+    background-color: #D2E8F6;
+}
+
+.rce-mbox-left-notch {
+    fill: #D2E8F6;
+}
+
+.rce-input.rce-input-textarea {
+    background-color: gainsboro;
+    border: 0.1vmin solid
+}
+
+.rce-container-mlist.message-list {
+    background-color: slategray;
+}
+
+.chatButton {
+    border-radius: 10%;
+    background: #C7E6F2;
+}

@@ -5,6 +5,9 @@ import { bindActionCreators } from "redux";
 //import { Link } from 'react-router-dom';
 
 import * as actions from "../../Actions/Index";
+
+import '../../Styles/chatbox.css'
+
 import { Row, Col } from 'reactstrap';
 import {
 	ChatList,
@@ -27,6 +30,15 @@ var dialogueLeft = {
 	date: +new Date()
 };
 
+var messageLeft = {
+	position: 'left',
+	text: 'Hi'
+}
+
+var right1 = {
+	position: 'right',
+	text: 'hello'
+}
 
 class ChatBox extends Component {
 	static propTypes = {
@@ -38,10 +50,11 @@ class ChatBox extends Component {
 		super(props);
 		this.state = {
 			isShow: false,
-			messageList: [dialogueLeft],
+			messageList: [dialogueLeft, messageLeft, right1],
 			input: '',
 			file: '',
-			imagePreviewUrl: ''
+			imagePreviewUrl: '',
+			class: "chatbox"
 		};
 	}
 
@@ -135,7 +148,7 @@ class ChatBox extends Component {
 		return (
 			<div>
 				<Row>
-					<Col xs="6" sm="4" >
+					<Col xs="6" sm="4" className="chat-panel">
 						<ChatList
 							className='chat-list'
 							dataSource={[
@@ -149,7 +162,7 @@ class ChatBox extends Component {
 							onClick={this.handleChatListClick}
 						/>
 					</Col>
-					<Col className='bl b--black-10'>
+					<Col className='bl b--black-10 messagePanel'>
 						<MessageList
 							className='message-list mt3'
 							lockable={true}
@@ -178,11 +191,12 @@ class ChatBox extends Component {
 								}}
 								rightButtons={
 									<button
+										className= "chatButton"
 										type="submit"
 										>send</button>
 								} />
 							<input type="file" name="fileToUpload" id="fileToUpload" onChange={(e) => this.handleImageChange(e)}></input>
-							<button onClick={this.handleClearFileInfo}>clear image</button>
+							<button className="chatButton clearButton" onClick={this.handleClearFileInfo}>clear image</button>
 						</form>
 						
 					</Col >
