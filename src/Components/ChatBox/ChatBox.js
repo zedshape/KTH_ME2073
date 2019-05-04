@@ -17,16 +17,20 @@ import {
 
 } from 'react-chat-elements';
 
+
+var hi = {
+	text: 'Hello',
+	status: 'seen'
+}
 var dialogueLeft = {
 	position: 'left',
 	type: 'photo',
 	data: {
-		uri: require('../../Styles/qq.ico'),
+		uri: require('../../Styles/Rice.jpg'),
 	},
 	status: 'read',
 	view: 'list',
 	theme: 'white',
-	text: 'Hello',
 	date: +new Date()
 };
 
@@ -39,7 +43,7 @@ var messageLeft = {
 var right1 = {
 	position: 'right',
 	status: 'sent',
-	text: 'Okay, I\'m coming to Sweden on 27th'
+	text: 'Okay, Can you tell me where exactly can I get that?'
 }
 
 class ChatBox extends Component {
@@ -52,7 +56,7 @@ class ChatBox extends Component {
 		super(props);
 		this.state = {
 			isShow: false,
-			messageList: [dialogueLeft, messageLeft, right1],
+			messageList: [hi, dialogueLeft, messageLeft, right1],
 			input: '',
 			file: '',
 			imagePreviewUrl: '',
