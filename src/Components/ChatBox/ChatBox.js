@@ -32,12 +32,12 @@ var dialogueLeft = {
 
 var messageLeft = {
 	position: 'left',
-	text: 'Hi'
+	text: 'I want some Rice from China'
 }
 
 var right1 = {
 	position: 'right',
-	text: 'hello'
+	text: 'Okay, I\'m coming to Sweden on 27th'
 }
 
 class ChatBox extends Component {
@@ -172,7 +172,7 @@ class ChatBox extends Component {
 						<form onSubmit={(e)=>this.addMessage(e)}>
 							<Input
 								className='mt3'
-								placeholder="test"
+								placeholder="Type Message"
 								defaultValue=""
 								ref='input'
 								multiline={true}
@@ -193,10 +193,10 @@ class ChatBox extends Component {
 									<button
 										className= "chatButton"
 										type="submit"
-										>send</button>
+										>Send</button>
 								} />
 							<input type="file" name="fileToUpload" id="fileToUpload" onChange={(e) => this.handleImageChange(e)}></input>
-							<button className="chatButton clearButton" onClick={this.handleClearFileInfo}>clear image</button>
+							<button className="chatButton clearButton" onClick={this.handleClearFileInfo}>Clear Image</button>
 						</form>
 						
 					</Col >

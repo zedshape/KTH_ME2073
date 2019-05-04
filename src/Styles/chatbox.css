@@ -40,6 +40,9 @@
     fill: #D2E8F6;
 }
 
+.rce-input {
+    border-radius: 0;
+}
 .rce-input.rce-input-textarea {
     background-color: gainsboro;
     border: 0.1vmin solid
