@@ -1,11 +1,8 @@
 import axios from 'axios';
-const API_URL = 'http://localhost:8000';
+const API_URL = 'http://141.223.239.241:8000';
 
 export default class UsersService{
-
     constructor(){}
-
-
     getUsers() {
         const url = `${API_URL}/api/users/`;
         return axios.get(url).then(response => response.data);
@@ -16,6 +13,10 @@ export default class UsersService{
     }
     getUser(email) {
         const url = `${API_URL}/api/users/${email}`;
+        return axios.get(url).then(response => response.data);
+    }
+    getUserById(id) {
+        const url = `${API_URL}/api/users/id/${id}`;
         return axios.get(url).then(response => response.data);
     }
     deleteUser(user){

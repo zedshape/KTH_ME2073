@@ -20,7 +20,7 @@ import {
 
 var hi = {
 	text: 'Hello',
-	status: 'seen'
+	status: 'read'
 }
 var dialogueLeft = {
 	position: 'left',
@@ -37,7 +37,7 @@ var dialogueLeft = {
 var messageLeft = {
 	position: 'left',
 	status: 'read',
-	text: 'I want some Rice from China'
+	text: 'I want some rice from China',
 }
 
 var right1 = {
@@ -114,7 +114,7 @@ class ChatBox extends Component {
 				data: {
 					uri: this.state.imagePreviewUrl,
 				},
-				status: 'read',
+				status: 'sent',
 				view: 'list',
 				theme: 'white',
 				date: +new Date()
@@ -125,7 +125,7 @@ class ChatBox extends Component {
 		let input = {
 			position: 'right',
 			type: 'text',
-			status: 'read',
+			status: 'sent',
 			view: 'list',
 			theme: 'white',
 			text: this.state.input,
@@ -153,17 +153,44 @@ class ChatBox extends Component {
 
 		return (
 			<div>
-				<Row>
+			<div className='showing'>
+				Chat, and get a deal!
+			</div>
+				<Row className="marginZero">
 					<Col xs="6" sm="4" className="chat-panel">
 						<ChatList
 							className='chat-list'
 							dataSource={[
 								{
-									avatar: 'https://facebook.github.io/react/img/logo.svg',
-									title: 'UserName',
-									subtitle: 'What are you doing?',
+									avatar: 'http://tachyons.io/img/avatar-jasonli.jpg',
+									title: 'User: ChinaRiceisTheBest',
+									subtitle: 'I want some rice from China',
 									date: new Date(),
 									unread: 0,
+								}]}
+							onClick={this.handleChatListClick}
+						/>
+						<ChatList
+							className='chat-list'
+							dataSource={[
+								{
+									avatar: 'http://tachyons.io/img/avatar-yavor.jpg',
+									title: 'User: BetMyHeadOff ',
+									subtitle: 'Sorry, I could not get this one yet',
+									date: new Date(),
+									unread: 0,
+								}]}
+							onClick={this.handleChatListClick}
+						/>
+						<ChatList
+							className='chat-list'
+							dataSource={[
+								{
+
+									title: 'FLY2U Helper',
+									subtitle: 'Your delivery is just confirmed by buyer! Your money will be paid in a week.',
+									date: new Date(),
+									unread: 1,
 								}]}
 							onClick={this.handleChatListClick}
 						/>
@@ -204,7 +231,7 @@ class ChatBox extends Component {
 							<input type="file" name="fileToUpload" id="fileToUpload" onChange={(e) => this.handleImageChange(e)}></input>
 							<button className="chatButton clearButton" onClick={this.handleClearFileInfo}>Clear Image</button>
 						</form>
-						
+
 					</Col >
 				</Row>
 			</div>

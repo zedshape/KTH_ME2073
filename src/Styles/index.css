@@ -8,10 +8,83 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #f4f5f4;
 }
-
+.grey{
+  color: grey;
+}
+.w80 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
 .pointer:hover{
   cursor: pointer;
 }
+.query{
+  display: grid;
+  height: 50px;
+  border-radius: 25px;
+  background: #80ccff;
+
+  padding: 10px 30px 10px 30px;
+  min-width: 1300px;
+  grid-template-columns: 60px 1.5fr 40px 1.5fr 30px 1fr 50px 0.5fr 0.5fr;
+}
+.query_in{
+  display: grid;
+  background: white;
+  margin: 0 20px 0 20px;
+  padding: 0 20px 0 20px;
+  border-radius: 25px;
+  color: grey;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+.query_inn{
+  background: white;
+  margin: 0 20px 0 20px;
+  padding: 0 20px 0 20px;
+  border-radius: 25px;
+  color: grey;
+
+}
+.hidden{
+  display:none;
+}
+.flee{
+  display:flex;
+  justify-content: center;
+}
+.flee_buyer{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  flex-wrap: wrap;
+}
+.height_50{
+  height: 50px;
+}
+.vertflee{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.autocomplete-wrapper{
+  width: 300px;
+}
+.errorMessage {
+  color: red;
+}
+.autocomplete-result{
+  background-color: white;
+}
+
+.autocomplete-result:hover{
+  background-color: #b3e6ff;
+}
+
 .showing {
   display: flex;
   height: 250px;
@@ -25,16 +98,33 @@ body {
 .fly2u{
     font-family: 'Righteous', cursive;
 }
+.marginZero{
+  margin-right: 0 !important;
+}
 .gridUserIndex{
   display: grid;
-  width: 800px;
-  height: 200px;
-  grid-gap: 5px;
+  width: 1000px;
+  height: 300px;
+  grid-gap: 20px;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
 }
+.nav-link{
+  display: flex !important;
+  height: 100% !important;
+}
 .gridUserIndex>div{
   background-color: white;
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 30px;
+  border-radius: 10px;
+  border: 1px solid grey;
+}
+.gridUserIndex>div:hover{
+  background-color: #EEEEEE;
 }
 .showing_sml {
   display: flex;

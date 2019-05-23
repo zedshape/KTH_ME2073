@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "airport-autocomplete-js": "^2.1.1",
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
     "jquery": "^3.4.0",
     "moment": "^2.24.0",
+    "polyfill": "^0.1.0",
+    "prettier": "^1.17.0",
     "react": "^16.8.6",
     "react-chat-elements": "^10.4.1",
     "react-day-picker": "^7.3.0",

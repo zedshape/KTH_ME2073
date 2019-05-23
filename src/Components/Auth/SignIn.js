@@ -24,10 +24,11 @@ class SignIn extends Component {
         usersService.getUser(
           this.refs.email.value
         ).then((result)=> {
-
+          console.log(this.refs.password.value, result.password)
           if(this.refs.password.value === result.password ) {
             localStorage.setItem('login', true);
             localStorage.setItem('name', result.name);
+            localStorage.setItem('id', result.id);
             localStorage.setItem('email', result.email);
             this.setState({"redirect": true, "name":result.name, "email":result.email})
           } else {
@@ -50,7 +51,18 @@ class SignIn extends Component {
         //if (auth.uid) return <Redirect to='/' />
         if (this.state.redirect) {
           return (<Redirect to={{
-                pathname: '/UserIndex',
+                pathname: this.props.location.afterpath,
+                state: { name: this.state.name,
+                        email: this.state.email,
+                          newuser: 'Yes',
+                          loggedin: 'Yes'}
+            }}
+          />)
+        }
+
+        if(localStorage.getItem('login') == "true") {
+          return (<Redirect to={{
+                pathname: this.props.location.afterpath,
                 state: { name: this.state.name,
                         email: this.state.email,
                           newuser: 'Yes',
@@ -64,6 +76,9 @@ class SignIn extends Component {
             <div>
               <div className='showing'>
                 Welcome back!
+              </div>
+              <div className='mt5'>
+              <h2>To use our <span className="fly2u">FLY2U</span> service, you need to login with your account!</h2>
               </div>
                 <div className="Sign white-box">
                     <form onSubmit={this.handleSubmit} className="">
@@ -95,6 +110,9 @@ class SignIn extends Component {
                             </button>
                             <h5 className="mt1 f6">
                                 Don't have an account? {signUp}
+                            </h5>
+                            <h5 className="mt1 f6">
+                                Test account: test@test.com / tester
                             </h5>
                             <div className="center red">
                                 {authError ? <p>{authError}</p> : null}

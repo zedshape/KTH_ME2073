@@ -47,8 +47,13 @@ class SignUp extends Component {
         }).then((result)=>{
           localStorage.setItem('login', true);
           localStorage.setItem('name', this.refs.name.value);
-          localStorage.setItem('name', this.refs.email.value);
-          this.setState({"redirect": true})
+          localStorage.setItem('email', this.refs.email.value);
+          usersService.getUser(
+            this.refs.email.value
+          ).then((result)=> {
+              localStorage.setItem('id', result.id);
+              this.setState({"redirect": true})
+            });
 
         }).catch((error)=>{
                 alert('There was an error! Please re-check your form.');

@@ -37,20 +37,30 @@ class UserIndex extends Component {
                 <div class="gridUserIndex center mt4 mb4">
                   <div>
                     <Link to='/OrderDetails'>
-                    Your orders
+                    <h2>Your orders</h2>
                     </Link>
+
+                    <h6>Track, History, Current status</h6>
                   </div>
                   <div>
+                  <Link to='#'>
                     Login & security
+                  </Link>
+                  <h6>Account setting, Email, Mobile</h6>
                   </div>
                   <div>
+                  <Link to='#'>
                     Your address
+                    </Link>
+                    <h6>Address for order</h6>
                   </div>
                   <div>
+                  <Link to='#'>
                     Payment options
+                    </Link>
+                    <h6>Edit or add payment methods</h6>
                   </div>
                 </div>
-                <hr />
 
             </div>
         );

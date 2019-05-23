@@ -19,7 +19,14 @@
 .rce-citem-body {
     text-align: left;
 }
+.rce-container-mlist {
 
+  height: 500px;
+}
+.rce-container-input {
+  margin-left: 10px;
+  background: inherit !important;
+}
 .rce-mlist {
     text-align: left;
 }
@@ -45,12 +52,13 @@
 }
 .rce-input.rce-input-textarea {
     background-color: gainsboro;
-    border: 0.1vmin solid
+    border: 0.1vmin #CCCCCC solid;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 45px;
 }
 
-.rce-container-mlist.message-list {
-    background-color: slategray;
-}
+
 
 .chatButton {
     border-radius: 10%;

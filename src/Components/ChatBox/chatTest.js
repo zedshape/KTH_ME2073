@@ -65,7 +65,9 @@ class ChatBox extends Component {
 
         return (
             <div>
-
+            <div className='showing'>
+              Chat, and get a deal!
+            </div>
                 <div id="messages-card" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop">
                     <div class="mdl-card__supporting-text mdl-color-text--grey-600">
                         <div id="messages">
