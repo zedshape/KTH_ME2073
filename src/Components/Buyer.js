@@ -40,9 +40,9 @@ class Buyer extends Component {
         });
     }
 
-    handleSearchClick = () => {
+    // handleSearchClick = () => {
         
-    }
+    // }
 
     showFromMonth = () => {
         const { from, to } = this.state;
@@ -134,7 +134,7 @@ class Buyer extends Component {
                             <input placeholder="From" id="fromLoc" onChange={this.handleInputChange}></input>{' '}—{' '}
                             <input placeholder="To" id='toLoc' onChange={this.handleInputChange}></input>
                         </div>
-                        <button className='f6 grow no-underline br-pill ba ph3 pv2 mb2 dib black mt2 ' id='searchInput' onClick={this.handleSearchClick}>Search</button>
+                        <Link to='/searchResults'><button className='f6 grow no-underline br-pill ba ph3 pv2 mb2 dib black mt2 ' id='searchInput' onClick={this.handleSearchClick}>Search</button></Link>
                     </div>
 
                 </div>
